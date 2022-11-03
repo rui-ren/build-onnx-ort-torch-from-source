@@ -1,6 +1,5 @@
-# FROM ptebic.azurecr.io/public/azureml/aifx/stable-ubuntu2004-cu116-py39-torch1121:biweekly.20221031
 
-FROM acptdev.azurecr.io/internal/azureml/aifx/stable-ubuntu2004-cu116-py38-torch1121:latest
+FROM [**Your Image**]
 
 ENV APP_HOME=/acpt
 
