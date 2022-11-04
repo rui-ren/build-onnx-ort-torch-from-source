@@ -43,7 +43,7 @@ git clone https://github.com/microsoft/onnxruntime
 cd onnxruntime
 
 # install the stable version of onnxruntime
-git checkout ${ort_version}
+git checkout v${ort_version}
 
 /bin/sh build.sh --enable_training \
     --use_cuda \
