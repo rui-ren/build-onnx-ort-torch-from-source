@@ -30,7 +30,7 @@ cd /acpt
 # build onnx from source
 git clone https://github.com/onnx/onnx.git
 cd onnx
-git checkout ${onnx_version}
+git checkout v${onnx_version}
 git clean -xdf
 python setup.py clean
 git submodule sync
