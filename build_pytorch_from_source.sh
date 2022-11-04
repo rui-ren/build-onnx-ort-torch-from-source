@@ -13,7 +13,7 @@ conda install -c pytorch magma-cuda110  # or the magma-cuda* that matches your C
 # Get PyTorch Packages
 git clone --recursive https://github.com/pytorch/pytorch
 cd pytorch
-git checkout ${torch_version}
+git checkout v${torch_version}
 export PYTORCH_BUILD_NUMBER=1
 export REL_WITH_DEB_INFO=1
 
