@@ -6,7 +6,7 @@ build onnx onnxruntime and pytorch from source
 1. Setup the onnx, ort and torch version
 
 ```
-export onnx==1.12.0
+export onnx_version==1.12.0
 export ort_version=1.13.1
 export torch_version=1.12.1
 ```
