@@ -45,18 +45,22 @@ cd onnxruntime
 # install the stable version of onnxruntime
 git checkout v${ort_version}
 
-/bin/sh build.sh --enable_training \
-    --use_cuda \
-    --parallel \
-    --build_shared_lib \
-    --cuda_home ${CUDA_HOME} \
-    --cudnn_home ${CUDNN_HOME} \
-    --use_tensorrt \
-    --tensorrt_home ${TRT_HOME} \
-    --config=RelWithDebInfo \
-    --build_wheel \
-    --skip_tests \
-    --cmake_extra_defines '"CMAKE_CUDA_ARCHITECTURES='${CMAKE_CUDA_ARCHITECTURES}'"'
+# For onnxruntime >= 1.14.1, we need to add --allow-as-root
+
+/bin/sh build.sh --parallel \
+        --build_shared_lib \
+        --cuda_home /usr/local/cuda \
+        --cudnn_home /usr/lib/x86_64-linux-gnu/ \
+        --use_tensorrt \
+        --tensorrt_home /usr/lib/x86_64-linux-gnu/ \
+        --config RelWithDebInfo \
+        --build_wheel \
+        --skip_tests \
+        --skip_submodule_sync \
+        --cmake_extra_defines '"CMAKE_CUDA_ARCHITECTURES='${CMAKE_CUDA_ARCHITECTURES}'"'
+
 # Install the onnxruntime whe
 python -m pip install --no-index --no-deps ./build/Linux/RelWithDebInfo/dist/*.whl
 cd ..
+
+# For onnxruntime local pytest, we might need to run `sudo apt-get install --only-upgrade libstdc++6` 
