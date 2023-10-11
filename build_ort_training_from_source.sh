@@ -63,4 +63,6 @@ git checkout v${ort_version}
 python -m pip install --no-index --no-deps ./build/Linux/RelWithDebInfo/dist/*.whl
 cd ..
 
+# enable ORTModule
+python -m onnxruntime.training.ortmodule.torch_cpp_extensions.install
 # For onnxruntime local pytest, we might need to run `sudo apt-get install --only-upgrade libstdc++6` 
