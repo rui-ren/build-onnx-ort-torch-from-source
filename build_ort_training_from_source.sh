@@ -27,7 +27,7 @@ cd onnxruntime
         --cuda_version ${CUDA_VERSION} \
         --cuda_home ${CUDA_HOME} \
         --cudnn_home ${CUDNN_HOME} \
-        --config RelWithDebInfo \
+        --config Debug \
         --build_wheel \
         --enable_nvtx_profile \
         --skip_tests \
