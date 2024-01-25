@@ -31,6 +31,7 @@ cd onnxruntime
         --build_wheel \
         --enable_nvtx_profile \
         --skip_tests \
+        --use_cuda \
         --allow_running_as_root
 
 # Install the onnxruntime whe
